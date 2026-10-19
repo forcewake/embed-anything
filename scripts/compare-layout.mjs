@@ -64,7 +64,8 @@ if (resultAt >= 0) {
 
 // Bundle the recreation's layout module so it can run in plain Node.
 const entry = resolve(here, '.layout-entry.mjs');
-const out = resolve(here, '.layout-bundle.mjs');await build({
+const out = resolve(here, '.layout-bundle.mjs');
+await build({
   stdin: {
     contents: `export { computeMosaicLayout, computeResultLayout } from ${JSON.stringify(resolve(appRoot, 'src/engine/AspectMosaicLayout.ts'))};`,
     resolveDir: appRoot,

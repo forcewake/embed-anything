@@ -21,7 +21,14 @@ const MAX_WIDTH = 1400;
 const browser = await chromium.launch();
 const page = await browser.newPage();
 
-for (const name of ['hero.png', 'search.png', 'zoomed-out.png', 'drop-overlay.png', 'mobile.png', 'reference-vs-recreation.png']) {
+for (const name of [
+  'hero.png',
+  'search.png',
+  'zoomed-out.png',
+  'drop-overlay.png',
+  'mobile.png',
+  'reference-vs-recreation.png',
+]) {
   const path = join(dir, name);
   const dataUrl = `data:image/png;base64,${readFileSync(path).toString('base64')}`;
   const { data, type } = await page.evaluate(

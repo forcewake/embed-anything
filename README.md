@@ -93,13 +93,16 @@ then served from the browser cache.
 
 `localhost` (or HTTPS) is required for the camera and the microphone.
 
-### What is *not* in the repository
+### What is _not_ in the repository
 
-| | Why |
-|---|---|
-| `public/local/**` — the three float16 matrices, the ONNX Runtime sidecar, the Inter fonts, the HDR environment map | Binary runtime assets, ~36 MB. Fetched with `npm run assets:fetch`. |
-| `public/local/catalog.json` — the normalized catalog, 2.9 MB | Generated with `npm run assets:build`. |
-| `reference/embeddinggemma-recovery/**` | The deployed bundle of the original Space has no known open-source license and is **not** redistributed. See [`reference/README.md`](reference/README.md). |
+- **`public/local/**`** — the three float16 matrices, the ONNX Runtime sidecar,
+  the Inter fonts and the HDR environment map. Binary runtime assets, ~36 MB.
+  Fetched with `npm run assets:fetch`.
+- **`public/local/catalog.json`** — the normalized catalog, 2.9 MB. Generated
+  with `npm run assets:build`.
+- **`reference/embeddinggemma-recovery/**`** — the deployed bundle of the
+  original Space. It has no known open-source license and is **not**
+  redistributed; see [`reference/README.md`](reference/README.md).
 
 The model weights (~1 GB) are downloaded by the browser on the first search and
 then served from the browser cache.
