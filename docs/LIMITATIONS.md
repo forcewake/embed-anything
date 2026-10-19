@@ -1,5 +1,21 @@
 # Limitations, risks and known gaps
 
+## The public deployment
+
+The live demo is deployed to GitHub Pages from `main` by
+`.github/workflows/deploy.yml`:
+
+|             |                                                                                                            |
+| ----------- | ---------------------------------------------------------------------------------------------------------- |
+| URL         | <https://forcewake.github.io/embed-anything/>                                                              |
+| Build       | `BASE_PATH=/embed-anything/` so the app, the worker chunk and the corpus assets resolve under the sub-path |
+| Payload     | the application (~900 KB) plus the runtime assets (~38 MB)                                                 |
+| First visit | the model weights (~1 GB) come from the Hugging Face CDN; the corpus matrices come from the deployment     |
+
+The browser needs WebGL2 to render the mosaic and WebGPU to search. On a
+browser without WebGPU the mosaic still works and the status line explains
+that the search is unavailable.
+
 ## Not implemented
 
 | Item                                                                | Impact   | Notes                                                                                                                                                                                                                       |
