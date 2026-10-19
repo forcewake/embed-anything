@@ -30,6 +30,15 @@ npm run test:e2e      # functional + visual + the ML search
 `npm run test:e2e` downloads the model (~1 GB) the first time. If you cannot,
 run it with `--grep-invert @ml`; the rest of the suite does not need it.
 
+> The visual baselines are **platform specific** (`*-darwin.png`,
+> `*-linux.png`, …) because the renderer is rasterised by the browser. The
+> committed baselines were recorded on macOS; on another platform run
+> `npm run test:e2e:update` once to record your own.
+>
+> The end-to-end suite is **not** part of the CI gate: it needs a
+> WebGPU-capable browser and the model weights. It runs locally and on the
+> scheduled `Visual regression` workflow.
+
 ## Style
 
 - **TypeScript strict** — `noUnusedLocals`, `noUnusedParameters` and
