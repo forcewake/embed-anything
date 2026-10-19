@@ -7,6 +7,13 @@
 **An almost infinite, mixed-media liquid-glass mosaic — searched with real
 in-browser multimodal embeddings.**
 
+[![Live demo](https://img.shields.io/badge/live%20demo-▶-0ea5e9?style=flat-square&logo=github)](https://forcewake.github.io/embed-anything/)
+[![CI](https://github.com/forcewake/embed-anything/actions/workflows/ci.yml/badge.svg)](https://github.com/forcewake/embed-anything/actions/workflows/ci.yml)
+[![Deploy](https://github.com/forcewake/embed-anything/actions/workflows/deploy.yml/badge.svg)](https://github.com/forcewake/embed-anything/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+**[▶ Open the live demo](https://forcewake.github.io/embed-anything/)**
+
 [Run it locally](#-quick-start) · [How it works](#-how-it-works) · [Fidelity](#-fidelity) · [Docs](#-documentation)
 
 ![The mosaic](docs/images/hero.jpg)

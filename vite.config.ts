@@ -48,6 +48,9 @@ function dropBundledOrtWasm(): Plugin {
 }
 
 export default defineConfig({
+  // The GitHub Pages deployment lives under a sub-path; `BASE_PATH` is set by
+  // the deploy workflow. Locally it stays at the root.
+  base: process.env.BASE_PATH ?? '/',
   plugins: [react(), dropBundledOrtWasm()],
   server: {
     port: 5173,
