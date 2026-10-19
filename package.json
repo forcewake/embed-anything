@@ -1,0 +1,67 @@
+{
+  "name": "embed-anything",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Embed Anything — an almost infinite mixed-media liquid-glass mosaic with real in-browser EmbeddingGemma 2 semantic search (WebGL2 + WebGPU).",
+  "license": "MIT",
+  "keywords": [
+    "webgl2",
+    "webgpu",
+    "embeddings",
+    "embeddinggemma",
+    "transformers.js",
+    "onnx",
+    "glass",
+    "shader",
+    "semantic-search",
+    "multimodal"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173 --strictPort",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --update-snapshots",
+    "test:e2e:install": "playwright install --with-deps chromium",
+    "assets:check": "node scripts/validate-assets.mjs",
+    "assets:build": "node scripts/build-catalog.mjs",
+    "assets:fetch": "node scripts/fetch-assets.mjs",
+    "verify": "npm run typecheck && npm run lint && npm test && npm run build"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.2.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^15.15.0",
+    "jsdom": "^26.1.0",
+    "playwright": "^1.64.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.3.7",
+    "vitest": "^3.2.7"
+  }
+}

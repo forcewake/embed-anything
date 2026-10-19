@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    open-pull-requests-limit: 10
+    groups:
+      production:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - '@huggingface/transformers'
+      development:
+        patterns:
+          - '*'
+    commit-message:
+      prefix: 'chore(deps)'
