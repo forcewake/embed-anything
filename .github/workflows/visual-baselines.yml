@@ -1,0 +1,44 @@
+name: 'Visual regression'
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every Monday at 04:00 UTC.
+    - cron: '0 4 * * 1'
+
+jobs:
+  visual:
+    name: Re-record the baselines
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+      - run: npm run test:e2e:install
+      - run: npm run assets:fetch
+      - run: npm run assets:build
+      - run: npm run build
+
+      - name: Re-record the baselines
+        run: npx playwright test --project=visual --update-snapshots
+
+      - name: Open a pull request with the new baselines
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/visual-baselines
+          title: 'chore: refresh the visual baselines'
+          commit-message: 'chore: refresh the visual baselines'
+          body: |
+            The visual baselines were re-recorded.
+
+            The mosaic is deterministic (the catalog order is seeded), but the
+            photographs come from a public CDN, so a small pixel delta is
+            expected on every run.
